@@ -1,0 +1,115 @@
+.class public final enum Lads_mobile_sdk/k93;
+.super Ljava/lang/Enum;
+.source "SourceFile"
+
+
+# static fields
+.field public static final enum a:Lads_mobile_sdk/k93;
+
+.field public static final enum b:Lads_mobile_sdk/k93;
+
+.field public static final enum c:Lads_mobile_sdk/k93;
+
+.field public static final enum d:Lads_mobile_sdk/k93;
+
+.field public static final enum e:Lads_mobile_sdk/k93;
+
+.field public static final enum f:Lads_mobile_sdk/k93;
+
+.field public static final synthetic g:[Lads_mobile_sdk/k93;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 8
+
+    new-instance v0, Lads_mobile_sdk/k93;
+
+    const-string v1, "RESULT_UNKNOWN"
+
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v1, v2}, Lads_mobile_sdk/k93;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lads_mobile_sdk/k93;->a:Lads_mobile_sdk/k93;
+
+    new-instance v1, Lads_mobile_sdk/k93;
+
+    const-string v2, "RESULT_NOOP_LOCAL_PROGRAM_STILL_VALID"
+
+    const/4 v3, 0x1
+
+    invoke-direct {v1, v2, v3}, Lads_mobile_sdk/k93;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lads_mobile_sdk/k93;->b:Lads_mobile_sdk/k93;
+
+    new-instance v2, Lads_mobile_sdk/k93;
+
+    const-string v3, "RESULT_UPDATED"
+
+    const/4 v4, 0x2
+
+    invoke-direct {v2, v3, v4}, Lads_mobile_sdk/k93;-><init>(Ljava/lang/String;I)V
+
+    sput-object v2, Lads_mobile_sdk/k93;->c:Lads_mobile_sdk/k93;
+
+    new-instance v3, Lads_mobile_sdk/k93;
+
+    const-string v4, "RESULT_NOOP_NO_NEW_PROGRAM"
+
+    const/4 v5, 0x3
+
+    invoke-direct {v3, v4, v5}, Lads_mobile_sdk/k93;-><init>(Ljava/lang/String;I)V
+
+    sput-object v3, Lads_mobile_sdk/k93;->d:Lads_mobile_sdk/k93;
+
+    new-instance v4, Lads_mobile_sdk/k93;
+
+    const-string v5, "RESULT_FAILURE_INVALID_RESPONSE"
+
+    const/4 v6, 0x4
+
+    invoke-direct {v4, v5, v6}, Lads_mobile_sdk/k93;-><init>(Ljava/lang/String;I)V
+
+    sput-object v4, Lads_mobile_sdk/k93;->e:Lads_mobile_sdk/k93;
+
+    new-instance v5, Lads_mobile_sdk/k93;
+
+    const-string v6, "RESULT_FAILURE_FETCHER_HTTP_RUNTIME_EXCEPTION"
+
+    const/4 v7, 0x5
+
+    invoke-direct {v5, v6, v7}, Lads_mobile_sdk/k93;-><init>(Ljava/lang/String;I)V
+
+    sput-object v5, Lads_mobile_sdk/k93;->f:Lads_mobile_sdk/k93;
+
+    filled-new-array/range {v0 .. v5}, [Lads_mobile_sdk/k93;
+
+    move-result-object v0
+
+    sput-object v0, Lads_mobile_sdk/k93;->g:[Lads_mobile_sdk/k93;
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;I)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    return-void
+.end method
+
+.method public static values()[Lads_mobile_sdk/k93;
+    .locals 1
+
+    sget-object v0, Lads_mobile_sdk/k93;->g:[Lads_mobile_sdk/k93;
+
+    invoke-virtual {v0}, [Lads_mobile_sdk/k93;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Lads_mobile_sdk/k93;
+
+    return-object v0
+.end method

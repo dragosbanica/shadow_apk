@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/background" android:fitsSystemWindows="true" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:orientation="horizontal" android:id="@id/manage_app_title_container" android:layout_width="match_parent" android:layout_height="56.0dp" android:baselineAligned="false" android:layout_alignParentTop="true">
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/manage_app_title_container_up" android:clickable="true" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_centerVertical="true">
+            <ImageView android:textSize="24.0sp" android:typeface="serif" android:id="@id/ivUp" android:padding="16.0dp" android:layout_width="56.0dp" android:layout_height="56.0dp" android:src="@drawable/ic_back" android:singleLine="true" />
+            <TextView android:textSize="18.0sp" android:textColor="@color/white" android:id="@id/tvTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dp" android:layout_marginRight="8.0dp" android:text="@string/select_app" android:singleLine="true" android:fontFamily="@font/san_bold" />
+        </LinearLayout>
+        <TextView android:textSize="18.0sp" android:textColor="@color/white" android:id="@id/tvCount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dp" android:layout_marginRight="16.0dp" android:singleLine="true" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:fontFamily="@font/san_bold" />
+    </RelativeLayout>
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="0.0dp" android:layout_weight="1.0">
+        <ListView android:id="@id/manage_app_listview" android:layout_width="match_parent" android:layout_height="match_parent" />
+    </LinearLayout>
+    <FrameLayout android:id="@id/ads_container" android:background="@color/background_tab" android:layout_width="match_parent" android:layout_height="@dimen/native_banner_height" android:layout_marginTop="8.0dp" app:layout_constraintBottom_toBottomOf="parent">
+        <TextView android:textColor="@color/gnt_gray" android:layout_gravity="center" android:id="@id/tv_ad_loading" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/loading_ad" />
+        <FrameLayout android:id="@id/my_template" android:visibility="visible" android:layout_width="match_parent" android:layout_height="match_parent" />
+    </FrameLayout>
+</LinearLayout>

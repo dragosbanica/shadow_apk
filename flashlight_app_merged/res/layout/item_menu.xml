@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:id="@id/itemMode" android:background="@color/background_tab" android:layout_width="match_parent" android:layout_height="wrap_content" android:foreground="?selectableItemBackground"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView android:id="@id/imageType" android:layout_width="72.0dp" android:layout_height="24.0dp" android:layout_marginTop="20.0dp" android:layout_marginBottom="20.0dp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+    <TextView android:textSize="16.0sp" android:textColor="@color/white" android:id="@id/textViewMode" android:layout_width="wrap_content" android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="@id/imageType" app:layout_constraintStart_toEndOf="@id/imageType" app:layout_constraintTop_toTopOf="@id/imageType" />
+    <ImageView android:id="@id/imgCheck" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="16.0dp" android:layout_marginEnd="16.0dp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent" app:srcCompat="@drawable/ic_check" app:tint="@color/green" />
+</androidx.constraintlayout.widget.ConstraintLayout>

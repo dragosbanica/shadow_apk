@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_gravity="center" android:orientation="vertical" android:background="@color/background" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:id="@id/my_template" android:layout_width="match_parent" android:layout_height="match_parent" />
+    <LinearLayout android:layout_gravity="right" android:orientation="horizontal" android:id="@id/btNext_top" android:background="@drawable/bt_next_3" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16.0dp" android:layout_marginRight="16.0dp" android:layout_alignParentRight="true" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent">
+        <ImageView android:padding="3.0dp" android:layout_width="24.0dp" android:layout_height="24.0dp" android:layout_margin="4.0dp" android:layout_marginRight="12.0dp" android:src="@drawable/ic_close" />
+    </LinearLayout>
+    <TextView android:textColor="@color/white" android:gravity="center" android:layout_gravity="right" android:id="@id/tvCount" android:background="@drawable/bt_next_3" android:layout_width="wrap_content" android:layout_height="32.0dp" android:layout_marginTop="16.0dp" android:layout_marginRight="16.0dp" android:minWidth="64.0dp" android:text="10s" />
+</FrameLayout>

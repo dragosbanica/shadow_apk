@@ -1,0 +1,47 @@
+.class public final Lcom/google/android/libraries/ads/mobile/sdk/nativead/NativeAdLoadResult$CustomNativeAdSuccess;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Lcom/google/android/libraries/ads/mobile/sdk/nativead/NativeAdLoadResult$NativeAdLoadSuccessResult;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/google/android/libraries/ads/mobile/sdk/nativead/NativeAdLoadResult;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = "CustomNativeAdSuccess"
+.end annotation
+
+
+# instance fields
+.field private final a:Lcom/google/android/libraries/ads/mobile/sdk/nativead/CustomNativeAd;
+
+
+# direct methods
+.method public constructor <init>(Lcom/google/android/libraries/ads/mobile/sdk/nativead/CustomNativeAd;)V
+    .locals 1
+
+    const-string v0, "ad"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/l;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcom/google/android/libraries/ads/mobile/sdk/nativead/NativeAdLoadResult$CustomNativeAdSuccess;->a:Lcom/google/android/libraries/ads/mobile/sdk/nativead/CustomNativeAd;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final getAd()Lcom/google/android/libraries/ads/mobile/sdk/nativead/CustomNativeAd;
+    .locals 1
+
+    iget-object v0, p0, Lcom/google/android/libraries/ads/mobile/sdk/nativead/NativeAdLoadResult$CustomNativeAdSuccess;->a:Lcom/google/android/libraries/ads/mobile/sdk/nativead/CustomNativeAd;
+
+    return-object v0
+.end method

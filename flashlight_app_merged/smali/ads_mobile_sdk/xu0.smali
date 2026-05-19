@@ -1,0 +1,136 @@
+.class public final Lads_mobile_sdk/xu0;
+.super Lb/sd;
+.source "SourceFile"
+
+
+# instance fields
+.field public final synthetic a:Lads_mobile_sdk/zu0;
+
+
+# direct methods
+.method public constructor <init>(Lads_mobile_sdk/zu0;)V
+    .locals 0
+
+    iput-object p1, p0, Lads_mobile_sdk/xu0;->a:Lads_mobile_sdk/zu0;
+
+    invoke-direct {p0}, Lb/sd;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a(Lb/K9;Lz2/d;)Ljava/lang/Object;
+    .locals 4
+
+    .line 1
+    check-cast p1, Lb/B8;
+
+    iget-object p2, p0, Lads_mobile_sdk/xu0;->a:Lads_mobile_sdk/zu0;
+
+    iput-object p1, p2, Lads_mobile_sdk/zu0;->g:Lb/B8;
+
+    iget-object p1, p2, Lads_mobile_sdk/zu0;->c:Lads_mobile_sdk/ru0;
+
+    iget-wide v0, p2, Lads_mobile_sdk/zu0;->b:J
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    new-instance p2, Lcom/google/gson/JsonObject;
+
+    invoke-direct {p2}, Lcom/google/gson/JsonObject;-><init>()V
+
+    const-string v2, "eventCategory"
+
+    const-string v3, "interstitial"
+
+    invoke-virtual {p2, v2, v3}, Lcom/google/gson/JsonObject;->addProperty(Ljava/lang/String;Ljava/lang/String;)V
+
+    const-string v2, "event"
+
+    const-string v3, "onAdLoaded"
+
+    invoke-virtual {p2, v2, v3}, Lcom/google/gson/JsonObject;->addProperty(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v0
+
+    const-string v1, "objectId"
+
+    invoke-virtual {p2, v1, v0}, Lcom/google/gson/JsonObject;->addProperty(Ljava/lang/String;Ljava/lang/Number;)V
+
+    invoke-virtual {p1, p2}, Lads_mobile_sdk/ru0;->a(Lcom/google/gson/JsonObject;)V
+
+    sget-object p1, Lv2/q;->a:Lv2/q;
+
+    return-object p1
+.end method
+
+.method public final a()V
+    .locals 0
+
+    .line 2
+    return-void
+.end method
+
+.method public final a(Lcom/google/android/libraries/ads/mobile/sdk/common/LoadAdError;)V
+    .locals 6
+
+    .line 3
+    const-string v0, "error"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/l;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lads_mobile_sdk/xu0;->a:Lads_mobile_sdk/zu0;
+
+    iget-object v1, v0, Lads_mobile_sdk/zu0;->c:Lads_mobile_sdk/ru0;
+
+    iget-wide v2, v0, Lads_mobile_sdk/zu0;->b:J
+
+    invoke-virtual {p1}, Lcom/google/android/libraries/ads/mobile/sdk/common/LoadAdError;->getCode()Lcom/google/android/libraries/ads/mobile/sdk/common/LoadAdError$ErrorCode;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lcom/google/android/libraries/ads/mobile/sdk/common/LoadAdError$ErrorCode;->getValue()I
+
+    move-result p1
+
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    new-instance v0, Lcom/google/gson/JsonObject;
+
+    invoke-direct {v0}, Lcom/google/gson/JsonObject;-><init>()V
+
+    const-string v4, "eventCategory"
+
+    const-string v5, "interstitial"
+
+    invoke-virtual {v0, v4, v5}, Lcom/google/gson/JsonObject;->addProperty(Ljava/lang/String;Ljava/lang/String;)V
+
+    const-string v4, "event"
+
+    const-string v5, "onAdFailedToLoad"
+
+    invoke-virtual {v0, v4, v5}, Lcom/google/gson/JsonObject;->addProperty(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v2
+
+    const-string v3, "objectId"
+
+    invoke-virtual {v0, v3, v2}, Lcom/google/gson/JsonObject;->addProperty(Ljava/lang/String;Ljava/lang/Number;)V
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    const-string v2, "errorCode"
+
+    invoke-virtual {v0, v2, p1}, Lcom/google/gson/JsonObject;->addProperty(Ljava/lang/String;Ljava/lang/Number;)V
+
+    invoke-virtual {v1, v0}, Lads_mobile_sdk/ru0;->a(Lcom/google/gson/JsonObject;)V
+
+    return-void
+.end method

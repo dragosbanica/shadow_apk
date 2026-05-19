@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:layout_width="match_parent" android:layout_height="wrap_content" android:shape="ring" android:useLevel="false" android:innerRadius="0.0dp" android:thickness="5.0dp">
+            <solid android:color="@android:color/transparent" />
+            <stroke android:width="1.0dp" android:color="#c1ffffff" />
+        </shape>
+    </item>
+</layer-list>

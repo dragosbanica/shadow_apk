@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:background="@color/background" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+        <com.github.angads25.toggle.widget.LabeledSwitch android:textSize="20.0dp" android:layout_gravity="center_horizontal" android:id="@id/switch_main" android:layout_width="110.0dp" android:layout_height="50.0dp" android:layout_marginTop="16.0dp" android:layout_marginBottom="8.0dp" android:layout_centerHorizontal="true" android:layout_marginStart="16.0dp" android:layout_marginEnd="16.0dp" app:colorBorder="@color/green" app:colorOn="@color/green" app:on="false" />
+        <LinearLayout android:orientation="vertical" android:id="@id/ll_control" android:layout_width="match_parent" android:layout_height="match_parent">
+            <androidx.cardview.widget.CardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="16.0dp" app:cardBackgroundColor="@color/background_tab" app:cardCornerRadius="16.0dp">
+                <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <LinearLayout android:visibility="visible" style="@style/prefsContainer">
+                        <ImageView android:id="@id/logout_icon" android:src="@drawable/ic_call" app:tint="@color/text" style="@style/prefsIcon" />
+                        <LinearLayout style="@style/prefsTextContainer">
+                            <TextView android:textColor="@color/text" android:id="@id/logout_title" android:text="@string/incoming_call" style="@style/prefsMain" />
+                        </LinearLayout>
+                        <ImageView android:visibility="gone" android:src="@drawable/ic_next" style="@style/iconNext" />
+                        <com.github.angads25.toggle.widget.LabeledSwitch android:textSize="14.0dp" android:id="@id/switch_incoming" android:layout_width="56.0dp" android:layout_height="24.0dp" android:layout_centerHorizontal="true" android:layout_marginStart="16.0dp" android:layout_marginEnd="16.0dp" app:colorBorder="@color/green" app:colorOn="@color/green" app:on="false" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="16.0dp" android:layout_marginRight="16.0dp" app:cardBackgroundColor="@color/background_tab" app:cardCornerRadius="16.0dp">
+                <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <LinearLayout android:visibility="visible" style="@style/prefsContainer">
+                        <ImageView android:src="@drawable/ic_message" app:tint="@color/text" style="@style/prefsIcon" />
+                        <LinearLayout style="@style/prefsTextContainer">
+                            <TextView android:textColor="@color/text" android:text="@string/notification_and_sms" style="@style/prefsMain" />
+                        </LinearLayout>
+                        <ImageView android:visibility="gone" android:src="@drawable/ic_next" style="@style/iconNext" />
+                        <com.github.angads25.toggle.widget.LabeledSwitch android:textSize="14.0dp" android:id="@id/switch_notification" android:layout_width="56.0dp" android:layout_height="24.0dp" android:layout_centerHorizontal="true" android:layout_marginStart="16.0dp" android:layout_marginEnd="16.0dp" app:colorBorder="@color/green" app:colorOn="@color/green" app:on="false" />
+                    </LinearLayout>
+                    <RelativeLayout android:id="@id/rlSelectApp" android:background="?selectableItemBackground" style="@style/prefsContainer">
+                        <TextView android:textColor="@color/text" android:layout_marginLeft="56.0dp" android:text="@string/select_app" style="@style/prefsMain" />
+                        <ImageView android:src="@drawable/ic_next" android:layout_alignParentRight="true" android:layout_centerVertical="true" style="@style/iconNext" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="16.0dp" android:layout_marginTop="16.0dp" android:layout_marginRight="16.0dp" app:cardBackgroundColor="@color/background_tab" app:cardCornerRadius="16.0dp">
+                <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <LinearLayout android:id="@id/llFlashlightType" android:background="?selectableItemBackground" android:visibility="visible" style="@style/prefsContainer">
+                        <ImageView android:src="@drawable/ic_flash" app:tint="@color/text" style="@style/prefsIcon" />
+                        <LinearLayout style="@style/prefsTextContainer">
+                            <TextView android:textColor="@color/text" android:text="@string/flashing_type" style="@style/prefsMain" />
+                        </LinearLayout>
+                        <TextView android:textSize="16.0dp" android:textColor="@color/text_sub" android:id="@id/tvFlashType" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="16.0dp" android:text="Continous" android:fontFamily="@font/san_regular" />
+                        <ImageView android:src="@drawable/ic_next" style="@style/iconNext" />
+                    </LinearLayout>
+                    <LinearLayout android:visibility="visible" style="@style/prefsContainer">
+                        <ImageView android:src="@drawable/ic_speedometer" app:tint="@color/text" style="@style/prefsIcon" />
+                        <LinearLayout style="@style/prefsTextContainer">
+                            <TextView android:textColor="@color/text" android:text="@string/flash_speed" style="@style/prefsMain" />
+                        </LinearLayout>
+                        <TextView android:textSize="16.0dp" android:textColor="@color/text_sub" android:id="@id/tvTime" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="16.0dp" android:text="500ms" android:fontFamily="@font/san_regular" />
+                    </LinearLayout>
+                    <SeekBar android:id="@id/sbOnLength" android:layout_marginLeft="48.0dp" android:layout_marginTop="8.0dp" android:layout_marginBottom="8.0dp" android:progressDrawable="@drawable/progress" android:thumb="@drawable/thumb" style="@style/Seekbar" />
+                    <androidx.cardview.widget.CardView android:layout_width="match_parent" android:layout_height="48.0dp" android:layout_marginLeft="32.0dp" android:layout_marginTop="16.0dp" android:layout_marginRight="32.0dp" android:layout_marginBottom="16.0dp" android:layout_alignParentRight="true" android:layout_centerVertical="true" app:cardBackgroundColor="@color/text_sub" app:cardCornerRadius="24.0dp">
+                        <TextView android:textColor="@color/text" android:gravity="center" android:layout_gravity="center" android:id="@id/tvTestOn" android:background="?selectableItemBackgroundBorderless" android:layout_width="match_parent" android:layout_height="match_parent" android:text="@string/test" android:textAllCaps="true" />
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="16.0dp" android:layout_marginTop="16.0dp" android:layout_marginRight="16.0dp" android:layout_marginBottom="16.0dp" app:cardBackgroundColor="@color/background_tab" app:cardCornerRadius="16.0dp">
+                <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <LinearLayout android:id="@id/card_advanced_settings" android:background="?selectableItemBackgroundBorderless" android:visibility="visible" style="@style/prefsContainer">
+                        <ImageView android:src="@drawable/ic_settings" app:tint="@color/text" style="@style/prefsIcon" />
+                        <LinearLayout style="@style/prefsTextContainer">
+                            <TextView android:textColor="@color/text" android:text="@string/advanced_setting" style="@style/prefsMain" />
+                        </LinearLayout>
+                        <ImageView android:src="@drawable/ic_next" style="@style/iconNext" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

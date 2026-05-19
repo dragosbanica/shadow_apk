@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/rlScreen" android:background="@color/white" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:id="@id/llAction" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="16.0dp" android:layout_alignParentBottom="true">
+        <LinearLayout android:orientation="horizontal" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="32.0dp" android:layout_marginBottom="32.0dp">
+            <TextView android:textSize="16.0dp" android:textColor="@color/black" android:layout_gravity="center_vertical" android:layout_width="100.0dp" android:layout_height="wrap_content" android:text="@string/brightness" />
+            <SeekBar android:layout_gravity="center_vertical" android:id="@id/sbBrightness" android:max="255" android:progress="255" android:progressDrawable="@drawable/progress_black" android:thumb="@drawable/thumb" style="@style/Seekbar" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="16.0dp" android:textColor="@color/black" android:layout_gravity="center_vertical" android:layout_width="100.0dp" android:layout_height="wrap_content" android:text="@string/color" />
+            <com.rtugeek.android.colorseekbar.ColorSeekBar android:id="@id/seekbar_color" android:layout_width="match_parent" android:layout_height="wrap_content" app:showAlphaBar="false" />
+        </LinearLayout>
+        <com.applus.torch.light.flashlight.flashalert.libs.CircularButton android:layout_gravity="center_horizontal" android:id="@id/buttonOnOff" android:layout_width="86.0dp" android:layout_height="86.0dp" android:layout_margin="16.0dp" android:src="@drawable/ic_on_off" app:buttonColor="@color/black" app:shadowColor="@color/red" app:tint="@color/text" />
+    </LinearLayout>
+</RelativeLayout>

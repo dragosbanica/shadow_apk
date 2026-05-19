@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:id="@id/mainContent" android:background="@color/background" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:id="@id/my_template" android:visibility="visible" android:layout_width="match_parent" android:layout_height="0.0dp" android:layout_marginTop="12.0dp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toBottomOf="@id/btNext" />
+    <FrameLayout android:id="@id/lav_swipe" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16.0dp" android:layout_marginRight="16.0dp" android:layout_marginStart="16.0dp" app:layout_constraintBottom_toBottomOf="@id/btNext" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="@id/btNext">
+        <com.airbnb.lottie.LottieAnimationView android:layout_gravity="center" android:layout_width="80.0dp" android:layout_height="80.0dp" app:lottie_autoPlay="true" app:lottie_loop="true" app:lottie_rawRes="@raw/swipe_left" />
+    </FrameLayout>
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/btNext" android:background="@drawable/bt_next_2" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12.0dp" android:layout_marginRight="16.0dp" android:layout_alignParentRight="true" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent">
+        <ImageView android:padding="4.0dp" android:layout_width="24.0dp" android:layout_height="24.0dp" android:layout_margin="4.0dp" android:src="@drawable/arrow_forward_ios_24dp" />
+    </LinearLayout>
+    <com.google.android.material.progressindicator.LinearProgressIndicator android:id="@id/progressBar" android:visibility="gone" android:layout_width="match_parent" android:layout_height="6.0dp" android:layout_marginLeft="16.0dp" android:layout_marginTop="32.0dp" android:layout_marginRight="16.0dp" android:alpha="0.4" android:elevation="4.0dp" app:indicatorColor="#fff" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" app:trackColor="#000" app:trackCornerRadius="8.0dp" app:trackThickness="6.0dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

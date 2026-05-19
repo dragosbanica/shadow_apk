@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/llRoot" android:background="@color/background_tab" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="56.0dp">
+        <FrameLayout android:id="@id/row_app_layout_icon_container" android:paddingLeft="16.0dp" android:paddingTop="8.0dp" android:paddingRight="16.0dp" android:paddingBottom="8.0dp" android:layout_width="72.0dp" android:layout_height="match_parent">
+            <ImageView android:layout_gravity="center" android:id="@id/row_app_layout_iv_icon" android:layout_width="40.0dp" android:layout_height="40.0dp" android:scaleType="fitXY" />
+        </FrameLayout>
+        <TextView android:textSize="16.0sp" android:textColor="@color/text" android:gravity="center_vertical" android:id="@id/row_app_layput_tv_name" android:paddingLeft="2.0dp" android:paddingRight="2.0dp" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="5.0dp" android:text="App Name" android:singleLine="true" android:layout_toLeftOf="@id/row_app_layout_cb_container" android:layout_toRightOf="@id/row_app_layout_icon_container" />
+        <FrameLayout android:id="@id/row_app_layout_cb_container" android:padding="16.0dp" android:layout_width="56.0dp" android:layout_height="match_parent" android:layout_alignParentRight="true">
+            <ImageView android:layout_gravity="center" android:id="@id/row_app_layout_iv_cb" android:layout_width="24.0dp" android:layout_height="24.0dp" android:src="@drawable/ic_check" android:scaleType="fitXY" />
+        </FrameLayout>
+    </RelativeLayout>
+</LinearLayout>

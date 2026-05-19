@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:background="@color/background" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.viewpager.widget.ViewPager android:id="@id/pagerIntroSlider" android:layout_width="0.0dp" android:layout_height="0.0dp" app:layout_constraintBottom_toTopOf="@id/my_template" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.0" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+    <RelativeLayout android:id="@id/indicator_container" android:visibility="visible" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16.0dp" app:layout_constraintBottom_toTopOf="@id/my_template" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent">
+        <TextView android:textSize="14.0sp" android:textColor="@color/colorWhite" android:gravity="center" android:id="@id/btSkip" android:paddingLeft="16.0dp" android:paddingRight="16.0dp" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="40.0dp" android:layout_marginLeft="8.0dp" android:foreground="?selectableItemBackgroundBorderless" android:minWidth="64.0dp" android:text="@string/skip" android:fontFamily="@font/san_bold" />
+        <com.tbuonomo.viewpagerdotsindicator.DotsIndicator android:id="@id/dots_indicator" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16.0dp" android:layout_centerVertical="true" app:dotsColor="#3fff" app:dotsCornerRadius="4.0dp" app:dotsSize="10.0dp" app:dotsSpacing="6.0dp" app:dotsWidthFactor="2.0" app:selectedDotColor="@color/white" />
+        <androidx.cardview.widget.CardView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="16.0dp" android:layout_alignParentRight="true" app:cardBackgroundColor="@color/background" app:cardCornerRadius="28.0dp">
+            <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/btNext" android:background="@drawable/bt_next" android:paddingLeft="20.0dp" android:paddingRight="16.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView android:textSize="14.0sp" android:textColor="@color/colorWhite" android:gravity="center" android:id="@id/tvNext" android:paddingLeft="8.0dp" android:paddingRight="8.0dp" android:layout_width="wrap_content" android:layout_height="48.0dp" android:text="@string/next" android:fontFamily="@font/san_bold" />
+                <ImageView android:id="@id/ivNext" android:padding="4.0dp" android:visibility="visible" android:layout_width="24.0dp" android:layout_height="24.0dp" android:src="@drawable/arrow_forward_ios_24dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+    <FrameLayout android:id="@id/my_template" android:visibility="visible" android:layout_width="match_parent" android:layout_height="280.0dp" app:layout_constraintBottom_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

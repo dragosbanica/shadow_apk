@@ -1,0 +1,160 @@
+.class public final Lads_mobile_sdk/va0;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Lb/o1;
+
+
+# instance fields
+.field public final a:Lads_mobile_sdk/x80;
+
+.field public b:Lcom/google/android/libraries/ads/mobile/sdk/common/AdRequest;
+
+.field public c:Lcom/google/android/libraries/ads/mobile/sdk/common/BaseRequest;
+
+.field public d:Lads_mobile_sdk/ij2;
+
+.field public e:Ljava/lang/Boolean;
+
+.field public f:Ljava/lang/Boolean;
+
+.field public g:Lcom/google/android/libraries/ads/mobile/sdk/banner/BannerRequest;
+
+.field public h:Lcom/google/android/libraries/ads/mobile/sdk/banner/BannerAdRequest;
+
+
+# direct methods
+.method public constructor <init>(Lads_mobile_sdk/x80;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lads_mobile_sdk/va0;->a:Lads_mobile_sdk/x80;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a(Lads_mobile_sdk/ij2;)Ljava/lang/Object;
+    .locals 0
+
+    .line 1
+    const/4 p1, 0x0
+
+    throw p1
+.end method
+
+.method public final a(Lcom/google/android/libraries/ads/mobile/sdk/common/AdRequest;)Ljava/lang/Object;
+    .locals 0
+
+    .line 2
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iput-object p1, p0, Lads_mobile_sdk/va0;->b:Lcom/google/android/libraries/ads/mobile/sdk/common/AdRequest;
+
+    return-object p0
+.end method
+
+.method public final a(Lcom/google/android/libraries/ads/mobile/sdk/common/BaseRequest;)Ljava/lang/Object;
+    .locals 0
+
+    .line 3
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iput-object p1, p0, Lads_mobile_sdk/va0;->c:Lcom/google/android/libraries/ads/mobile/sdk/common/BaseRequest;
+
+    return-object p0
+.end method
+
+.method public final a(Z)Ljava/lang/Object;
+    .locals 0
+
+    .line 4
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lads_mobile_sdk/va0;->f:Ljava/lang/Boolean;
+
+    return-object p0
+.end method
+
+.method public final b()Lads_mobile_sdk/wa0;
+    .locals 9
+
+    .line 1
+    iget-object v0, p0, Lads_mobile_sdk/va0;->b:Lcom/google/android/libraries/ads/mobile/sdk/common/AdRequest;
+
+    const-class v1, Lcom/google/android/libraries/ads/mobile/sdk/common/AdRequest;
+
+    invoke-static {v0, v1}, Lb/nb;->b(Ljava/lang/Object;Ljava/lang/Class;)V
+
+    iget-object v0, p0, Lads_mobile_sdk/va0;->c:Lcom/google/android/libraries/ads/mobile/sdk/common/BaseRequest;
+
+    const-class v1, Lcom/google/android/libraries/ads/mobile/sdk/common/BaseRequest;
+
+    invoke-static {v0, v1}, Lb/nb;->b(Ljava/lang/Object;Ljava/lang/Class;)V
+
+    iget-object v0, p0, Lads_mobile_sdk/va0;->d:Lads_mobile_sdk/ij2;
+
+    const-class v1, Lads_mobile_sdk/ij2;
+
+    invoke-static {v0, v1}, Lb/nb;->b(Ljava/lang/Object;Ljava/lang/Class;)V
+
+    iget-object v0, p0, Lads_mobile_sdk/va0;->e:Ljava/lang/Boolean;
+
+    const-class v1, Ljava/lang/Boolean;
+
+    invoke-static {v0, v1}, Lb/nb;->b(Ljava/lang/Object;Ljava/lang/Class;)V
+
+    iget-object v0, p0, Lads_mobile_sdk/va0;->f:Ljava/lang/Boolean;
+
+    invoke-static {v0, v1}, Lb/nb;->b(Ljava/lang/Object;Ljava/lang/Class;)V
+
+    iget-object v0, p0, Lads_mobile_sdk/va0;->g:Lcom/google/android/libraries/ads/mobile/sdk/banner/BannerRequest;
+
+    const-class v1, Lcom/google/android/libraries/ads/mobile/sdk/banner/BannerRequest;
+
+    invoke-static {v0, v1}, Lb/nb;->b(Ljava/lang/Object;Ljava/lang/Class;)V
+
+    iget-object v0, p0, Lads_mobile_sdk/va0;->h:Lcom/google/android/libraries/ads/mobile/sdk/banner/BannerAdRequest;
+
+    const-class v1, Lcom/google/android/libraries/ads/mobile/sdk/banner/BannerAdRequest;
+
+    invoke-static {v0, v1}, Lb/nb;->b(Ljava/lang/Object;Ljava/lang/Class;)V
+
+    new-instance v0, Lads_mobile_sdk/wa0;
+
+    iget-object v3, p0, Lads_mobile_sdk/va0;->a:Lads_mobile_sdk/x80;
+
+    iget-object v4, p0, Lads_mobile_sdk/va0;->c:Lcom/google/android/libraries/ads/mobile/sdk/common/BaseRequest;
+
+    iget-object v5, p0, Lads_mobile_sdk/va0;->d:Lads_mobile_sdk/ij2;
+
+    iget-object v6, p0, Lads_mobile_sdk/va0;->e:Ljava/lang/Boolean;
+
+    iget-object v7, p0, Lads_mobile_sdk/va0;->f:Ljava/lang/Boolean;
+
+    iget-object v8, p0, Lads_mobile_sdk/va0;->h:Lcom/google/android/libraries/ads/mobile/sdk/banner/BannerAdRequest;
+
+    move-object v2, v0
+
+    invoke-direct/range {v2 .. v8}, Lads_mobile_sdk/wa0;-><init>(Lads_mobile_sdk/x80;Lcom/google/android/libraries/ads/mobile/sdk/common/BaseRequest;Lads_mobile_sdk/ij2;Ljava/lang/Boolean;Ljava/lang/Boolean;Lcom/google/android/libraries/ads/mobile/sdk/banner/BannerAdRequest;)V
+
+    return-object v0
+.end method
+
+.method public final b(Z)Ljava/lang/Object;
+    .locals 0
+
+    .line 2
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lads_mobile_sdk/va0;->e:Ljava/lang/Boolean;
+
+    return-object p0
+.end method

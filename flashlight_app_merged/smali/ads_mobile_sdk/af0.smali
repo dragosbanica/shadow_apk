@@ -1,0 +1,52 @@
+.class public final Lads_mobile_sdk/af0;
+.super Lkotlin/jvm/internal/m;
+.source "SourceFile"
+
+# interfaces
+.implements LI2/a;
+
+
+# static fields
+.field public static final a:Lads_mobile_sdk/af0;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lads_mobile_sdk/af0;
+
+    invoke-direct {v0}, Lads_mobile_sdk/af0;-><init>()V
+
+    sput-object v0, Lads_mobile_sdk/af0;->a:Lads_mobile_sdk/af0;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    invoke-direct {p0, v0}, Lkotlin/jvm/internal/m;-><init>(I)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invoke()Ljava/lang/Object;
+    .locals 1
+
+    sget-object v0, Lads_mobile_sdk/es0;->f:Lb/X0;
+
+    invoke-static {}, Lb/d7;->a()Z
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    return-object v0
+.end method

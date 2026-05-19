@@ -1,0 +1,14 @@
+.class public interface abstract Landroidx/datastore/preferences/protobuf/D;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# virtual methods
+.method public abstract makeImmutableListAt(Ljava/lang/Object;J)V
+.end method
+
+.method public abstract mergeListsAt(Ljava/lang/Object;Ljava/lang/Object;J)V
+.end method
+
+.method public abstract mutableListAt(Ljava/lang/Object;J)Ljava/util/List;
+.end method

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.libraries.ads.mobile.sdk.nativead.NativeAdView android:id="@id/native_ad_view" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_centerInParent="true"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@id/ad_unit" android:background="@color/gnt_white" android:layout_width="match_parent" android:layout_height="@dimen/native_banner_height">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="match_parent">
+            <com.google.android.libraries.ads.mobile.sdk.nativead.MediaView android:id="@id/media_view" android:layout_width="0.0dp" android:layout_height="match_parent" android:layout_weight="6.0" />
+            <RelativeLayout android:layout_width="0.0dp" android:layout_height="match_parent" android:layout_weight="4.0">
+                <TextView android:textSize="@dimen/gnt_ad_indicator_text_size" android:textColor="@color/white" android:gravity="center" android:id="@id/ad_notification_view" android:background="@drawable/gnt_rounded_corners_shape" android:layout_width="@dimen/gnt_ad_indicator_width" android:layout_height="wrap_content" android:layout_margin="8.0dp" android:layout_marginLeft="@dimen/gnt_no_margin" android:text="Ad" android:fontFamily="@font/san_bold" />
+                <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="8.0dp" android:layout_marginRight="8.0dp" android:layout_centerVertical="true">
+                    <LinearLayout android:orientation="horizontal" android:id="@id/headline" android:background="@color/gnt_test_background_color" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dp">
+                        <TextView android:textSize="15.0sp" android:textColor="@android:color/black" android:ellipsize="end" android:id="@id/primary" android:layout_width="match_parent" android:layout_height="match_parent" android:maxLines="2" android:fontFamily="@font/san_bold" />
+                    </LinearLayout>
+                    <TextView android:textSize="11.0sp" android:textColor="@android:color/black" android:ellipsize="end" android:id="@id/body" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="2.0dp" android:maxLines="3" />
+                    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12.0dp">
+                        <TextView android:textSize="14.0sp" android:textColor="@android:color/white" android:gravity="center" android:layout_gravity="center_vertical" android:id="@id/cta" android:background="@drawable/bt_install_ad" android:paddingLeft="3.0dp" android:paddingRight="3.0dp" android:visibility="visible" android:layout_width="match_parent" android:layout_height="40.0dp" android:layout_weight="1.0" android:textAllCaps="true" android:fontFamily="@font/san_bold" />
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.libraries.ads.mobile.sdk.nativead.NativeAdView>

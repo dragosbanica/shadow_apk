@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_gravity="center" android:orientation="vertical" android:background="@color/background" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:id="@id/topPanel" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="80.0dp" android:layout_marginStart="48.0dp" android:layout_marginEnd="48.0dp" app:layout_constraintLeft_toLeftOf="parent" app:layout_constraintRight_toRightOf="parent" app:layout_constraintTop_toTopOf="parent">
+        <androidx.cardview.widget.CardView android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="4.0dp" app:cardBackgroundColor="@android:color/transparent" app:cardCornerRadius="32.0dp">
+            <androidx.appcompat.widget.AppCompatImageView android:id="@id/ivIcon" android:layout_width="100.0dp" android:layout_height="100.0dp" />
+        </androidx.cardview.widget.CardView>
+        <androidx.constraintlayout.widget.ConstraintLayout android:layout_gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16.0dp">
+            <TextView android:textSize="14.0sp" android:textColor="@color/gnt_gray" android:id="@id/title_1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/app_name_main" android:textAllCaps="true" android:fontFamily="@font/san_bold" app:layout_constraintHorizontal_chainStyle="packed" app:layout_constraintLeft_toLeftOf="parent" app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+    <FrameLayout android:id="@id/my_template" android:layout_width="match_parent" android:layout_height="0.0dp" android:layout_marginTop="32.0dp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toBottomOf="@id/topPanel" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/btNext_top" android:background="@drawable/bt_next_2" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="24.0dp" android:layout_marginRight="16.0dp" android:layout_alignParentRight="true" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent">
+        <ImageView android:padding="3.0dp" android:layout_width="24.0dp" android:layout_height="24.0dp" android:layout_margin="2.0dp" android:layout_marginRight="12.0dp" android:src="@drawable/ic_close" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
