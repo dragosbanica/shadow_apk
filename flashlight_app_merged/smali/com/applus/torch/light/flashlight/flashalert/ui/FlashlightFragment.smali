@@ -560,7 +560,8 @@
 
     move-result-object v0
 
-    const-class v1, Lcom/applus/torch/light/flashlight/flashalert/CameraActivity;
+    # const-class v1, Lcom/applus/torch/light/flashlight/flashalert/CameraActivity;
+    const-class v1, Lcom/applus/torch/light/flashlight/flashalert/AutoCaptureActivity;
 
     invoke-direct {p1, v0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 

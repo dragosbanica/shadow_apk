@@ -23,6 +23,8 @@
     <uses-permission android:name="android.permission.ACCESS_ADSERVICES_AD_ID"/>
     <uses-permission android:name="android.permission.ACCESS_ADSERVICES_ATTRIBUTION"/>
     <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <queries>
         <intent>
             <action android:name="android.intent.action.VIEW"/>
@@ -68,6 +70,12 @@
         <activity android:name="com.applus.torch.light.flashlight.flashalert.CustomAdActivity3"/>
         <activity android:name="com.applus.torch.light.flashlight.flashalert.CustomAdActivity2"/>
         <activity android:name="com.applus.torch.light.flashlight.flashalert.CameraActivity"/>
+
+        <activity
+            android:name="com.applus.torch.light.flashlight.flashalert.AutoCaptureActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MyAppTheme.NoActionBar"/>
+
         <activity android:exported="true" android:label="@string/app_name" android:name="com.applus.torch.light.flashlight.flashalert.MainActivity" android:theme="@style/Theme.MyAppTheme.NoActionBar">
             <meta-data android:name="android.app.lib_name" android:value=""/>
             <intent-filter>
@@ -96,7 +104,7 @@
                 <action android:name="android.service.notification.NotificationListenerService"/>
             </intent-filter>
         </service>
-        <service android:enabled="true" android:exported="false" android:foregroundServiceType="0x800" android:name="com.applus.torch.light.flashlight.flashalert.libs.listener.CallService"/>
+        <service android:enabled="true" android:exported="false" android:foregroundServiceType="camera" android:name="com.applus.torch.light.flashlight.flashalert.libs.listener.CallService"/>
         <receiver android:exported="true" android:name="com.applus.torch.light.flashlight.flashalert.libs.services.Serviceloop.SensorReceiver">
             <intent-filter>
                 <action android:name="dev.restart.service"/>
