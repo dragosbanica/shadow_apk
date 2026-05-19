@@ -1,0 +1,50 @@
+# Build output
+build/
+dist/
+
+# Generated APKs
+*.apk
+*.ap_
+
+# Signing files
+*.keystore
+*.jks
+*.pem
+*.pk8
+*.x509.pem
+
+# Apktool cache
+.apktool/
+
+# Dex / temp
+*.dex
+
+# Logs
+*.log
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# IntelliJ / Android Studio
+.idea/
+*.iml
+
+# VSCode
+.vscode/
+
+# Temporary files
+tmp/
+temp/
+
+# JADX cache
+jadx-cache/
+
+# Python cache (daca folosesti scripturi)
+__pycache__/
+
+# Git backup / patch
+*.orig
+*.rej
