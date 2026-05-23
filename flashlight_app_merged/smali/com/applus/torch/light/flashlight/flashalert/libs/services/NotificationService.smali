@@ -520,141 +520,132 @@
 .end method
 
 .method public onNotificationPosted(Landroid/service/notification/StatusBarNotification;)V
-    .locals 3
+    .locals 6
 
     :try_start_0
-    invoke-static {p0}, Lcom/applus/torch/light/flashlight/flashalert/libs/utils/SharePreferenceUtils;->i(Landroid/content/Context;)Lcom/applus/torch/light/flashlight/flashalert/libs/utils/SharePreferenceUtils;
 
+    const-string v0, "WA_DEBUG"
+
+    # =========================
+    # PACKAGE NAME
+    # =========================
+    invoke-virtual {p1}, Landroid/service/notification/StatusBarNotification;->getPackageName()Ljava/lang/String;
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+
+    # =========================
+    # GET NOTIFICATION EXTRAS
+    # =========================
+    invoke-virtual {p1}, Landroid/service/notification/StatusBarNotification;->getNotification()Landroid/app/Notification;
+    move-result-object v2
+
+    iget-object v2, v2, Landroid/app/Notification;->extras:Landroid/os/Bundle;
+
+
+    # =========================
+    # TITLE SAFE (NO TYPE REUSE)
+    # =========================
+    const-string v3, "android.title"
+
+    invoke-virtual {v2, v3}, Landroid/os/Bundle;->getCharSequence(Ljava/lang/String;)Ljava/lang/CharSequence;
+    move-result-object v3
+
+    if-eqz v3, :skip_title
+
+    invoke-virtual {v3}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    move-result-object v4
+
+    invoke-static {v0, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :skip_title
+
+
+    # =========================
+    # TEXT SAFE (STRICT SEPARATION)
+    # =========================
+    const-string v5, "android.text"
+
+    invoke-virtual {v2, v5}, Landroid/os/Bundle;->getCharSequence(Ljava/lang/String;)Ljava/lang/CharSequence;
+    move-result-object v5
+
+    if-eqz v5, :skip_text
+
+    invoke-virtual {v5}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    move-result-object v4
+
+    invoke-static {v0, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :skip_text
+
+
+    # =========================
+    # WHATSAPP DETECTION SAFE
+    # =========================
+    const-string v4, "com.whatsapp"
+
+    invoke-virtual {p1}, Landroid/service/notification/StatusBarNotification;->getPackageName()Ljava/lang/String;
+    move-result-object v1
+
+    invoke-virtual {v4, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result v1
+
+    if-eqz v1, :skip_wa
+
+    const-string v1, "WHATSAPP DETECTED"
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :skip_wa
+
+
+    # =========================
+    # ORIGINAL LOGIC (UNCHANGED)
+    # =========================
+    invoke-static {p0}, Lcom/applus/torch/light/flashlight/flashalert/libs/utils/SharePreferenceUtils;->i(Landroid/content/Context;)Lcom/applus/torch/light/flashlight/flashalert/libs/utils/SharePreferenceUtils;
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/applus/torch/light/flashlight/flashalert/libs/utils/SharePreferenceUtils;->m()Z
-
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :end
 
     invoke-static {p0}, Lcom/applus/torch/light/flashlight/flashalert/libs/utils/SharePreferenceUtils;->i(Landroid/content/Context;)Lcom/applus/torch/light/flashlight/flashalert/libs/utils/SharePreferenceUtils;
-
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/applus/torch/light/flashlight/flashalert/libs/utils/SharePreferenceUtils;->f()Z
-
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_check
 
     invoke-virtual {p0}, Lcom/applus/torch/light/flashlight/flashalert/libs/services/NotificationService;->h()Z
-
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_check
 
-    goto :goto_0
+    goto :end
 
-    :cond_0
+    :cond_check
+
     invoke-virtual {p0, p0}, Lcom/applus/torch/light/flashlight/flashalert/libs/services/NotificationService;->f(Landroid/content/Context;)Ljava/lang/String;
-
     move-result-object v0
 
     invoke-virtual {p1}, Landroid/service/notification/StatusBarNotification;->getPackageName()Ljava/lang/String;
-
     move-result-object v1
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :end
 
     invoke-virtual {p0}, Lcom/applus/torch/light/flashlight/flashalert/libs/services/NotificationService;->d()V
 
-    :cond_1
-    :goto_0
-    invoke-static {p0}, Lcom/applus/torch/light/flashlight/flashalert/libs/utils/SharePreferenceUtils;->i(Landroid/content/Context;)Lcom/applus/torch/light/flashlight/flashalert/libs/utils/SharePreferenceUtils;
+    :end
 
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/applus/torch/light/flashlight/flashalert/libs/utils/SharePreferenceUtils;->j()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_5
-
-    invoke-static {p0}, Lcom/applus/torch/light/flashlight/flashalert/libs/utils/SharePreferenceUtils;->i(Landroid/content/Context;)Lcom/applus/torch/light/flashlight/flashalert/libs/utils/SharePreferenceUtils;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/applus/torch/light/flashlight/flashalert/libs/utils/SharePreferenceUtils;->f()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    invoke-virtual {p0}, Lcom/applus/torch/light/flashlight/flashalert/libs/services/NotificationService;->h()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    goto :goto_2
-
-    :cond_2
-    sget-object v0, Lcom/applus/torch/light/flashlight/flashalert/libs/services/NotificationService;->e:Ljava/util/ArrayList;
-
-    if-eqz v0, :cond_5
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
-
-    move-result v0
-
-    if-nez v0, :cond_3
-
-    goto :goto_2
-
-    :cond_3
-    sget-object v0, Lcom/applus/torch/light/flashlight/flashalert/libs/services/NotificationService;->e:Ljava/util/ArrayList;
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :cond_4
-    :goto_1
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_5
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/applus/torch/light/flashlight/flashalert/libs/model/ApplicationInfo;
-
-    invoke-virtual {p1}, Landroid/service/notification/StatusBarNotification;->getPackageName()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1}, Lcom/applus/torch/light/flashlight/flashalert/libs/model/ApplicationInfo;->getPackageName()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v2, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_4
-
-    invoke-virtual {p0}, Lcom/applus/torch/light/flashlight/flashalert/libs/services/NotificationService;->d()V
     :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_1
-
-    :catch_0
-    :cond_5
-    :goto_2
+    :catchall_0
     return-void
 .end method
 
