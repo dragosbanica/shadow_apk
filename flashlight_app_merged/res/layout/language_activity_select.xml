@@ -11,9 +11,9 @@
         </FrameLayout>
         <ImageView android:id="@id/btDone" android:padding="12.0dp" android:visibility="gone" android:layout_width="56.0dp" android:layout_height="56.0dp" android:foreground="?selectableItemBackgroundBorderless" android:src="@drawable/ic_done" android:layout_alignParentRight="true" android:layout_centerVertical="true" app:tint="@color/purple_500" />
     </RelativeLayout>
-    <androidx.recyclerview.widget.RecyclerView android:id="@id/rvLanguages" android:paddingBottom="8.0dp" android:clipToPadding="false" android:layout_width="match_parent" android:layout_height="0.0dp" android:layout_marginTop="8.0dp" app:layout_constraintBottom_toTopOf="@id/ads_container" app:layout_constraintTop_toBottomOf="@id/rlHeadMain" />
-    <androidx.cardview.widget.CardView android:id="@id/ads_container" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="8.0dp" app:cardBackgroundColor="@color/background" app:cardCornerRadius="8.0dp" app:layout_constraintBottom_toBottomOf="parent">
+    <androidx.recyclerview.widget.RecyclerView android:id="@id/rvLanguages" android:paddingBottom="8.0dp" android:clipToPadding="false" android:layout_width="match_parent" android:layout_height="0.0dp" android:layout_marginTop="8.0dp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toBottomOf="@id/rlHeadMain" />
+    <androidx.cardview.widget.CardView android:id="@id/ads_container" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="8.0dp" app:cardBackgroundColor="@color/background" app:cardCornerRadius="8.0dp" app:layout_constraintBottom_toBottomOf="parent">
         <TextView android:textColor="@color/gnt_gray" android:layout_gravity="center" android:id="@id/tv_ad_loading" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-        <FrameLayout android:id="@id/my_template" android:visibility="visible" android:layout_width="match_parent" android:layout_height="match_parent" />
+        <FrameLayout android:id="@id/my_template" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent" />
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
