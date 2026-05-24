@@ -830,29 +830,10 @@
 .end method
 
 .method public final w()Z
-    .locals 2
+    .locals 1
 
-    .line 1
-    iget-object v0, p0, Lcom/applus/torch/light/flashlight/flashalert/MyApplication$AppOpenManager;->e:Lcom/google/android/libraries/ads/mobile/sdk/appopen/AppOpenAd;
-
-    if-eqz v0, :cond_0
-
-    const-wide/16 v0, 0x4
-
-    invoke-virtual {p0, v0, v1}, Lcom/applus/torch/light/flashlight/flashalert/MyApplication$AppOpenManager;->J(J)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
     const/4 v0, 0x0
 
-    :goto_0
     return v0
 .end method
 
@@ -896,59 +877,7 @@
 .end method
 
 .method public final synthetic z()V
-    .locals 3
+    .locals 0
 
-    .line 1
-    :try_start_0
-    new-instance v0, Lcom/google/android/libraries/ads/mobile/sdk/common/AdRequest$Builder;
-
-    sget-object v1, Lcom/applus/torch/light/flashlight/flashalert/MyApplication$AppOpenManager;->m:Ljava/lang/String;
-
-    invoke-direct {v0, v1}, Lcom/google/android/libraries/ads/mobile/sdk/common/AdRequest$Builder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0}, Lcom/google/android/libraries/ads/mobile/sdk/common/AdRequest$Builder;->build()Lcom/google/android/libraries/ads/mobile/sdk/common/AdRequest;
-
-    move-result-object v0
-
-    new-instance v1, Lcom/applus/torch/light/flashlight/flashalert/MyApplication$AppOpenManager$a;
-
-    invoke-direct {v1, p0}, Lcom/applus/torch/light/flashlight/flashalert/MyApplication$AppOpenManager$a;-><init>(Lcom/applus/torch/light/flashlight/flashalert/MyApplication$AppOpenManager;)V
-
-    invoke-static {v0, v1}, Lcom/google/android/libraries/ads/mobile/sdk/appopen/AppOpenAd;->load(Lcom/google/android/libraries/ads/mobile/sdk/common/AdRequest;Lcom/google/android/libraries/ads/mobile/sdk/common/AdLoadCallback;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v0
-
-    const/4 v1, 0x0
-
-    iput-boolean v1, p0, Lcom/applus/torch/light/flashlight/flashalert/MyApplication$AppOpenManager;->f:Z
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "AppOpenAd.load failed: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string v2, "AppOpenManager"
-
-    invoke-static {v2, v1, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    :goto_0
     return-void
 .end method

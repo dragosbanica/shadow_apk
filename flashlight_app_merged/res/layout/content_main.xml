@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginBottom="64.0dp" app:layout_behavior="@string/appbar_scrolling_view_behavior"
   xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <fragment android:name="androidx.navigation.fragment.NavHostFragment" android:id="@id/nav_host_fragment_content_main" android:layout_width="match_parent" android:layout_height="0.0dp" app:defaultNavHost="true" app:layout_constraintBottom_toTopOf="@id/ads_container" app:layout_constraintLeft_toLeftOf="parent" app:layout_constraintRight_toRightOf="parent" app:layout_constraintTop_toTopOf="parent" app:navGraph="@navigation/mobile_navigation" />
-    <FrameLayout android:id="@id/ads_container" android:background="@color/background_tab" android:visibility="visible" android:layout_width="match_parent" android:layout_height="@dimen/native_banner_height" android:layout_marginTop="8.0dp" app:layout_constraintBottom_toBottomOf="parent">
+    <fragment android:name="androidx.navigation.fragment.NavHostFragment" android:id="@id/nav_host_fragment_content_main" android:layout_width="match_parent" android:layout_height="0.0dp" app:defaultNavHost="true" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintLeft_toLeftOf="parent" app:layout_constraintRight_toRightOf="parent" app:layout_constraintTop_toTopOf="parent" app:navGraph="@navigation/mobile_navigation" />
+    <FrameLayout android:id="@id/ads_container" android:background="@color/background_tab" android:visibility="gone" android:layout_width="match_parent" android:layout_height="@dimen/native_banner_height" android:layout_marginTop="8.0dp" app:layout_constraintBottom_toBottomOf="parent">
         <TextView android:textColor="@color/gnt_gray" android:layout_gravity="center" android:id="@id/tv_ad_loading" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/loading_ad" />
-        <FrameLayout android:id="@id/my_template" android:visibility="visible" android:layout_width="match_parent" android:layout_height="match_parent" />
+        <FrameLayout android:id="@id/my_template" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent" />
     </FrameLayout>
     <FrameLayout android:id="@id/ads_container_banner" android:background="@color/background_tab" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

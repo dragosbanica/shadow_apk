@@ -7,11 +7,11 @@
         </FrameLayout>
         <TextView android:textSize="18.0dp" android:textColor="@color/text" android:id="@id/tvBack" android:background="?selectableItemBackgroundBorderless" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/advanced_setting" android:layout_toRightOf="@id/back_button" android:layout_centerVertical="true" />
     </RelativeLayout>
-    <FrameLayout android:id="@id/ads_container" android:background="@color/background_tab" android:layout_width="match_parent" android:layout_height="@dimen/native_banner_height" app:layout_constraintBottom_toBottomOf="parent">
+    <FrameLayout android:id="@id/ads_container" android:background="@color/background_tab" android:visibility="gone" android:layout_width="match_parent" android:layout_height="@dimen/native_banner_height" app:layout_constraintBottom_toBottomOf="parent">
         <TextView android:textColor="@color/gnt_gray" android:layout_gravity="center" android:id="@id/tv_ad_loading" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/loading_ad" />
-        <FrameLayout android:id="@id/my_template" android:visibility="visible" android:layout_width="match_parent" android:layout_height="wrap_content" />
+        <FrameLayout android:id="@id/my_template" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" />
     </FrameLayout>
-    <ScrollView android:layout_width="match_parent" android:layout_height="0.0dp" app:layout_constraintBottom_toTopOf="@id/ads_container" app:layout_constraintTop_toBottomOf="@id/action_bar">
+    <ScrollView android:layout_width="match_parent" android:layout_height="0.0dp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toBottomOf="@id/action_bar">
         <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
             <androidx.cardview.widget.CardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="16.0dp" app:cardBackgroundColor="@color/background_tab" app:cardCornerRadius="16.0dp">
                 <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
