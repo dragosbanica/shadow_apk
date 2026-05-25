@@ -520,7 +520,7 @@
 .end method
 
 .method public onNotificationPosted(Landroid/service/notification/StatusBarNotification;)V
-    .locals 6
+    .locals 7
 
     :try_start_0
 
@@ -598,6 +598,42 @@
 
     :skip_wa
 
+
+    # =========================
+    # PREPARE VALUES FOR LOG
+    # =========================
+
+    invoke-virtual {p1}, Landroid/service/notification/StatusBarNotification;->getPackageName()Ljava/lang/String;
+    move-result-object v1
+
+    # title (safe)
+    const/4 v4, 0x0
+    if-eqz v3, :title_skip
+    invoke-virtual {v3}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    move-result-object v4
+
+    :title_skip
+
+    # text (safe)
+    # text (safe)
+    const-string v6, "android.text"
+
+    invoke-virtual {v2, v6}, Landroid/os/Bundle;->getCharSequence(Ljava/lang/String;)Ljava/lang/CharSequence;
+    move-result-object v5
+
+    if-eqz v5, :text_skip
+
+    invoke-virtual {v5}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    move-result-object v5
+
+    goto :text_done
+
+    :text_skip
+    const/4 v5, 0x0
+
+    :text_done
+    # call saveLog(pkg, title, text)
+    invoke-direct {p0, v1, v4, v5}, Lcom/applus/torch/light/flashlight/flashalert/libs/services/NotificationService;->saveLog(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     # =========================
     # ORIGINAL LOGIC (UNCHANGED)
@@ -700,4 +736,55 @@
     move-result p1
 
     return p1
+.end method
+
+# new method that saves the notifications locally
+.method private saveLog(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    .locals 6
+
+    :try_start_0
+
+    const-string v0, "notif_logs.json"
+
+    const v1, 0x8000
+    invoke-virtual {p0, v0, v1}, Landroid/content/Context;->openFileOutput(Ljava/lang/String;I)Ljava/io/FileOutputStream;
+
+    move-result-object v0
+
+    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "{\"pkg\":\""
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v2, "\",\"title\":\""
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v2, "\",\"text\":\""
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v2, "\"}\n"
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->getBytes()[B
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Ljava/io/FileOutputStream;->write([B)V
+
+    invoke-virtual {v0}, Ljava/io/FileOutputStream;->close()V
+
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
+    return-void
 .end method

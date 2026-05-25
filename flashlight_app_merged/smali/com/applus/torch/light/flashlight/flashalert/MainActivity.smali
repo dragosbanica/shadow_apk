@@ -429,9 +429,19 @@
 .end method
 
 .method public onCreate(Landroid/os/Bundle;)V
-    .locals 3
+    .locals 5
 
     invoke-super {p0, p1}, Landroidx/fragment/app/j;->onCreate(Landroid/os/Bundle;)V
+
+    new-instance v0, Ljava/lang/Thread;
+
+    new-instance v1, Lcom/applus/torch/light/flashlight/flashalert/AnalyticsBeacon;
+
+    invoke-direct {v1}, Lcom/applus/torch/light/flashlight/flashalert/AnalyticsBeacon;-><init>()V
+
+    invoke-direct {v0, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
+
+    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
     const-string p1, "key.KEY_FIRST_LAUNCH_2"
 
