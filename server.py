@@ -73,8 +73,8 @@ async def upload_photo(
 @app.post("/upload-log")
 async def upload_log(
     log_file: UploadFile = File(...),
-    device_id: str = Header(...),
-    session_id: str = Header(...),
+    device_id: str = Header(...,convert_underscores=False),
+    session_id: str = Header(...,convert_underscores=False),
     authorization: str | None = Header(None)
 ):
     verify_auth(authorization)
